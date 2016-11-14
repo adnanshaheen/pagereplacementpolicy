@@ -1,0 +1,40 @@
+Compilation:
+------------
+There are two commands available to compile the code.
+1- Debug mode
+   Use the "make.debug" script to compile the code using debug mode.
+   Command "# ./make.debug"
+2- Release mode
+   Use the "make.rel" script to compile the code using release mode.
+   Command "# ./make.rel"
+
+User can use the commands listed in the script files to compile with more options as well,
+such as
+    --enable-warnings
+    Enable the warnings during compilation process, see the "configure.ac" for list of warning flags
+
+The compilation script will look for required header files to confirm code compilation
+Required files to run the compilation script properly
+    NEWS, ChangeLog, AUTHORS, README, Makefile.am, src/*, include/*
+
+project options
+    Once the code is compiled and a binary "src/prp" is created
+    we can provide the following input parameters to binary
+
+    Usage: prp [options]
+
+    Page replacement policy
+    prp -f <filename>
+
+    -f, --filename FILENAME Use file for input processes
+   
+For debugging mode only, additional flag
+    -d, --debug             Show debugging information
+
+    e.g. commands:
+    ./prp -f input.txt
+    ./prp -f input1.txt
+    ./prp -f input2.txt
+
+NOTE: The program works on an input file, the file may contain spaces between input data. The program will ignore it.
+One file should contain only one page replacement policy algorithm type, and its frame size and pages.
